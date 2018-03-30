@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ether
 
 	A work-in progress custom firmware generator
@@ -31,7 +30,6 @@ A work-in-progress custom firmware generator.
   &nbsp;
   
   
->>>>>>> cd905b9e651cf2afc05f17e5afe646b7522faaad
   * * * * * 
   **THIS IS A BETA TOOL! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE TO YOUR DEVICE AS A RESULT OF USING THIS TOOL!*
   * * * * * 
