@@ -1,4 +1,20 @@
+<<<<<<< HEAD
 
+=======
+# Ether
+
+	A work-in progress custom firmware generator
+	
+	
+	
+	
+	Currently can generate a custom Root Filesystem and then place it in a Sn0wbreeze IPSW (faster)
+	Can also generate a custom Root Filesystem and use ipsw.exe to generate the rest of the firmware (slower)
+	
+	
+	
+=======
+>>>>>>> 4cc45d3a299597f961b6ba7ac2f50aa9779f6de5
 # Eth3r
 
 A work-in-progress custom firmware generator.
