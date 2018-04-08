@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-# Ether
 
-	A work-in progress custom firmware generator
-	
-	
-	
-	
-	Currently can generate a custom Root Filesystem and then place it in a Sn0wbreeze IPSW (faster)
-	Can also generate a custom Root Filesystem and use ipsw.exe to generate the rest of the firmware (slower)
-	
-	
-	
-=======
 # Eth3r
 
 A work-in-progress custom firmware generator.
@@ -20,18 +7,13 @@ A work-in-progress custom firmware generator.
  **REQUIRES A BOOTROM EXPLOIT!**
    *Or kloader if you know what you're doing*
   
-  *Current release supports the iPhone 3GS on 6.1.3* **only**!
-  *More support will come eventually!*
-  
-  The pretty cool part is that, in theory, this tool *should* work for *any device* as long as you have firmware keys and patches (iBSS, iBEC, ASR, iBoot, and LLB).
-    *Currently the firmwares generated are broken... this will be fixed soon*
+  Currently can Generate a root filesystem, which can be placed in a Sn0wbreeze IPSW manually for a CFW
   
   
   &nbsp;
   &nbsp;
   
   
->>>>>>> cd905b9e651cf2afc05f17e5afe646b7522faaad
   * * * * * 
   **THIS IS A BETA TOOL! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE TO YOUR DEVICE AS A RESULT OF USING THIS TOOL!*
   * * * * * 
@@ -39,6 +21,7 @@ A work-in-progress custom firmware generator.
   
   # To Do
   
+  - Fix Ramdisk
   - Fix firmwares
   - Add support for more devices
   - Add support for verbose boot

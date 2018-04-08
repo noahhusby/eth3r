@@ -47,11 +47,16 @@ echo.
 echo.
 pause
 
-::                                So I'm gonna attempt to document this code so curious people can ravage through this... good luck to you.
+::                                So I'm gonna attempt to document this code so curious people can rummage through this... good luck to you.
 		
 		:: Main Program Time
-  cd Files
+  cd Files		
   CLS
+	echo Please put your IPSW for the desired iOS version in the Files folder
+	echo.
+	echo.
+	pause
+	echo.
     ECHO We need to get some input from you...
 	ECHO.
 	ECHO What are the firmware keys for your device and target iOS version?
@@ -60,8 +65,6 @@ pause
 	pause
     echo.
 	set /p RootFS_Key="Enter Root Filesystem Key: "
-	set /p Ramdisk_IV="Enter Restore Ramdisk IV: "
-	set /p Ramdisk_Key="Enter Restore Ramdisk Key: "
 	echo.
 	echo Cool. Now just a bit more info and we can get going.
 	echo.
@@ -71,15 +74,84 @@ pause
 			:: This code asks the user for info, and sets their inputted info as a variable.
 	
 
+	
+REM if not exist User_Info (
+	REM mkdir User_Info
+REM )
+	REM cd User_Info
+
+REM if exist pref1.txt (
+			REM if exist pref2.txt (
+				REM if exist pref3.txt (
+					REM for /F "tokens=1" %%A IN ('pref1.txt') do set Model_In_Pref=%%A
+					REM set /p delete="All your preferance files are taken up... delete your first saved configuration containing the info for your %Model_In_Pref%? (yes or no)"
+					REM if "%delete%"=="yes" (
+						REM del pref1.txt
+					REM )
+				REM )
+			REM )
+		REM )
+		REM if not exist pref1.txt (
+			REM if not exist pref2.txt (
+				REM if not exist pref3.txt (
+					REM echo "/%Model%">> pref1.txt
+					REM echo "/%Build%">> pref1.txt
+					REM echo "/%RootFS%">> pref1.txt
+					REM echo "/%RootFS_Key%">> pref1.txt
+					REM )
+				REM )
+			REM )
+			REM if exist pref1.txt (
+				REM if not exist pref2.txt (
+					REM if not exist pref3.txt (
+						REM for /F "tokens=1" %%A IN ('pref1.txt') do set Original_Model=%%A
+						REM if "%Model%" NEQ "%Original_Model%" (
+							REM echo "%Model%">> pref2.txt
+							REM echo %Build%>> pref2.txt
+							REM echo "%RootFS%">> pref2.txt
+							REM echo %RootFS_Key%>> pref2.txt
+						REM )
+					REM )
+				REM )
+			REM )
+			REM if exist pref1.txt (
+				REM if exist pref2.txt (
+					REM if not exist pref3.txt (
+						REM for /F "tokens=1" %%A IN ('pref1.txt') do set Original_Model=%%A
+						REM if "%Model%" NEQ "%Original_Model%" (
+							REM echo "%Model%">> pref3.txt
+							REM echo %Build%>> pref3.txt
+							REM echo "%rootfs%">> pref3.txt
+							REM echo %RootFS_Key%>> pref3.txt
+						REM )
+					REM )
+				REM )
+			REM )
+			
+			::         Well, this leaves me with an interesting situation. I would like to echo all 
+			::         of the user's device info (firmware keys, model, rootfs name) to one of three
+			::         files dedicated to saving, then later use the 'FOR' command to retrieve the
+			::         info later. The thing is, the iphone model has a comma in it (iPhone2,1 etc.)
+			::         so batch seems to see the comma and end the echoing... which is quite strange.
+			::         I have absolutely no idea how to echo a variable that contains a comma like
+			::         an iPhone model properly. If you see this and you know how to solve this issue,
+			::         do me a big favor and submit a pull request. You'll get credit as well. :)
+			
+
+	
+	
+	
 :DA_REAL_STUFF
 CLS
-  echo Downloading the IPSW (May take a bit depending on your connection)
-    ::%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -Command "(new-object System.Net.WebClient).DownloadFile('https://api.ipsw.me/v4/ipsw/download/%Model%/%Build%', '%Model%_%Version%_%Build%_Restore.ipsw')"
+    cd ..
+    ::%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -Command "(new-object System.Net.WebClient).DownloadFile('https://github.com/iH8sn0w/sn0wbreeze/releases/2.9.14/1077/sn0wbreeze-v2.9.14.zip', 'Sn0wbreeze.exe')"
+	
 
-  
+	
 echo Extracting IPSW
-  7za.exe  x -oIPSW "%Model%_%Version%_%Build%_Restore.ipsw"  
-		::extracts the IPSw to a folder named IPSW
+  cd Files
+  7za.exe  x -oIPSW "%Model%_%Version%_%Build%_Restore.ipsw"  >NUL
+		::extracts the IPSW to a folder named IPSW
   
   :Get
 echo Getting the info we need from the files...
@@ -89,23 +161,21 @@ echo Getting the info we need from the files...
       set /P rootfs=<{temp}
 	  del {temp}
 	  
-	  echo %rootfs%
-	  pause
+	  echo The rootfs name is %rootfs%
 
-echo Decrypting RootFS
-  cd IPSW
+echo Decrypting Root Filesystem
   rename "%rootfs%" "rootfs.dmg"
   cd ..
-  dmg extract "IPSW/rootfs.dmg" "IPSW/decrootfs.dmg" -k %RootFS_Key%  
+  dmg extract "IPSW/rootfs.dmg" "IPSW/decrootfs.dmg" -k %RootFS_Key%  >NUL
 
 echo Giving room to RootFS
   hfsplus "IPSW/decrootfs.dmg" grow 1920783616  
   
 echo Extracting Cydia
-  hfsplus "IPSW/decrootfs.dmg" untar "Cydia.tar" "/"  
+  hfsplus "IPSW/decrootfs.dmg" untar "Cydia.tar" "/"  >NUL
   
 echo Jailbreaking
-  hfsplus "IPSW/decrootfs.dmg" untar "p0sixspwn.tar" "/"
+  hfsplus "IPSW/decrootfs.dmg" untar "p0sixspwn.tar" "/" >NUL
 
 echo Bypassing iCloud Lock
   hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/Setup"
@@ -122,46 +192,47 @@ echo Making stuff better
   hfsplus "IPSW/decrootfs.dmg" rm "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings" SpringBoard.strings
   hfsplus "IPSW/decrootfs.dmg" add SpringBoard.strings "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings"
   
-::echo Adding Siri
-  ::hfsplus "IPSW/decrootfs.dmg" add BypassAuth.deb "var/root/Media/Cydia/AutoInstall"
-  ::hfsplus "IPSW/decrootfs.dmg" add Ac!dSiri.deb "var/root/Media/Cydia/AutoInstall"
-    
+REM echo Making directories
+	REM hfsplus "IPSW/decrootfs.dmg" mkdir "var/root/Media/Cydia"
+	REM hfsplus "IPSW/decrootfs.dmg" mkdir "var/root/Media/Cydia/AutoInstall"
+	
+REM echo Adding Siri
+  REM hfsplus "IPSW/decrootfs.dmg" add BypassAuth.deb "var/root/Media/Cydia/AutoInstall"
+  REM hfsplus "IPSW/decrootfs.dmg" add Ac!dSiri.deb "var/root/Media/Cydia/AutoInstall"
+  
+REM echo Adding Activator
+	REM hfsplus "IPSW/decrootfs.dmg" add "libactivator_1.9.12_iphoneos-arm.deb" "var/root/Media/Cydia/AutoInstall"
+	
+echo Installing SSH
+	hfsplus "IPSW/decrootfs.dmg" untar "ssh_small.tar" "/" >NUL
+	
 :next
 echo Rebuilding RootFS
-  dmg build "IPSW/decrootfs.dmg" "IPSW/%Rootfs_Name%"  
-  xpwntool %Ramdisk_Name%" -t "IPSW/orig_%Ramdisk_Name%" -iv %Ramdisk_IV% -k %Ramdisk_Key%  
-
-  ::Maid Mode: ACTIVATE!
-echo Deleting unrequired files
-  ::Maid Mode: Deactivate!
-
-  ::Pack dem files up and we're good to go!
-echo Packing up the IPSW
-  COPY 7z.exe "IPSW/7z.exe"  
+  copy dmg.exe IPSW >NUL
   cd IPSW
-  7z u -tzip -mx0 Gen_R8.ipsw -x!7z.exe   
-  del 7z.exe 
-  cd ..
-  
+  dmg build "decrootfs.dmg" "%rootfs%"  >NUL
+
+
+
+	
+	
+:end
 echo.
 echo.
 echo.
 echo.
-echo             Your IPSW has been generated.
+echo              Your RootFS has been generated
 echo.
-echo           You will need iTunes 11.0.5 to restore
+echo            To use it, replace to RootFS dmg of a 
+echo        Sn0wbreeze IPSW with the rootfs we generated.
+echo       The Sn0wbreeze IPSW should have a root partition
+echo                size of 2500 or more MegaBytes.
 echo.
-echo.
-echo                   Gen-r8 by TKO_Cuber
+echo                    Eth3r by TKO_Cuber
 echo.
 pause
 
-  ::Cue the final song... close the curtains... we did it bois!
-  ::The audience stands and applauds. 
-  ::Claps roar through the room.
-  ::The show is finally over.
-  
-  :: ~ End ~
+  ::Cue the final song... close the curtains...
   
   
 
