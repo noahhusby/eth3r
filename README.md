@@ -7,7 +7,11 @@ A work-in-progress custom firmware generator.
  **REQUIRES A BOOTROM EXPLOIT!**
    *Or kloader if you know what you're doing*
   
+<<<<<<< HEAD
 
+=======
+  Currently can Generate a root filesystem, which can be placed in a Sn0wbreeze IPSW manually for a CFW
+>>>>>>> c1172641403b61b104831478ebad1b4e90f0b588
   
   
   &nbsp;
@@ -18,6 +22,7 @@ A work-in-progress custom firmware generator.
   **THIS IS A BETA TOOL! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE TO YOUR DEVICE AS A RESULT OF USING THIS TOOL!*
   * * * * * 
 
+<<<<<<< HEAD
 
 # Instructions
 	- Download this tool either from releases page or `git clone`ing it
@@ -34,6 +39,8 @@ A work-in-progress custom firmware generator.
 	- Let the restore go through
 	- Use `ipwndfu` and do `sudo ./ipwndfu -p` to enter pwned dfu mode
 	- run `sudo ./ipwndfu -x` and the device should boot up normally!
+=======
+>>>>>>> c1172641403b61b104831478ebad1b4e90f0b588
   
   # To Do
   
