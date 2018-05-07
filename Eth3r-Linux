@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/bin/bash
 
 clear
@@ -61,8 +60,6 @@ fi
 
 #Cue the magic, cue the logo, cue the.....  bash?
 
-=======
->>>>>>> c1172641403b61b104831478ebad1b4e90f0b588
 clear
 echo " "
 echo " "
@@ -81,7 +78,6 @@ echo '                                  by TKO-Cuber '
 echo " "
 echo " "
 echo " "
-<<<<<<< HEAD
 echo '                                  Linux Beta '
 echo '                                 Version 0.0.1 '
 echo " "
@@ -193,27 +189,14 @@ if [[ "$mode" == "5" ]]; then
 	fi
 fi
 
-if [[ "$mode" == "2" ]] || [[ "$mode" == "3" ]] || [[ "$mode" == "4" ]]; then
-	echo " "
-	echo "is there anything else you'd like to do today?"
-	echo " "
-	echo [yes]
-	echo [no]
-	echo " "
-	read anything_else
-	if [[ "$anything_else" == "yes" ]]; then
-		echo "Gotcha. Let's begin once again, shall we?"
-		sleep 3
-		./Eth3r-Linux
-	fi
-	if [[ "$anything_else" == "no" ]]; then
+if [[ "$mode" == "2" ]] || [[ "$mode" == "3" ]] || [[ "$mode" == "4" ]] || [[ "$mode" == "5"]]; then
 		echo " "
 		echo "Thank you for using Eth3r by TKO-Cuber"
 		echo "Hope to see you again soon :)"
 		echo " "
 		sleep 6
+		read -rsp $'Press any key to exit....\n' -n1 key
 		exit
-	fi
 fi
 
 
@@ -388,27 +371,3 @@ cd Files
 
 #idevicerestore isn't working right now... says cannot connect to DFU mode.
 #maybe if i can fix idevicerestore then I can add support for immediate restoring.
-=======
-echo '                                      Beta '
-echo '                                  Version 0.0.1 '
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-read -rsp $'Press any key to begin.....\n' -n1 key
-
-
-if [[ ! -e files/.dep_inst ]]; then
-	echo "Installng dependencies..."
-	echo ' '
-	echo "If you haven't installed Wine AND git already, please do with"
-	echo 'sudo apt-get install wine git'
-	echo "or the equivalent command"
-	echo " "
-	pause 3
-	cd Files
-	git clone https://github.com/TKO-Cuber/ipwndfu.git
->>>>>>> c1172641403b61b104831478ebad1b4e90f0b588
