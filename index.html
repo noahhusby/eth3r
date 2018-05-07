@@ -8,13 +8,61 @@
             background-color: black;
             color: red;
             }
-        </style>
+            .logo {
+    		margin-top: 25px;
+    		font-size: 21px;
+    		text-align: center;
+    		animation: fadein 2s;
+    		-moz-animation: fadein 2s; /* Firefox */
+    		-webkit-animation: fadein 2s; /* Safari and Chrome */
+    		-o-animation: fadein 2s; /* Opera */
+    		}
+            .everything_else {
+            margin-top: 25px;
+    		font-size: 21px;
+    		text-align: center;
+    		animation: fadein 15s;
+    		-moz-animation: fadein 15s; /* Firefox */
+    		-webkit-animation: fadein 15s; /* Safari and Chrome */
+    		-o-animation: fadein 15s; /* Opera */
+            }
+            .description {
+            margin-top: 25px;
+    		font-size: 21px;
+    		text-align: center;
+    		animation: fadein 8s;
+    		-moz-animation: fadein 8s; /* Firefox */
+    		-webkit-animation: fadein 8s; /* Safari and Chrome */
+    		-o-animation: fadein 8s; /* Opera */
+            }
+    	@keyframes fadein {
+    	from {
+        	opacity:0;
+      	}
+      	to {
+        	opacity:1;
+        }
+      }
+          	@keyframes stuff {
+    	from {
+        	opacity:0;
+      	}
+      	to {
+        	opacity:1;
+        }
+      }
+     </style>
     </head>
     <body>
         <center>
+        	<div class="logo">
             <img src="https://tko-cuber.github.io/jb/eth3r.png">
+            </div>
         </center>
-        <h1>A tool to generate custom firmwares for jailbreaking, verbose boot, downgrading, etc.</h1>
+        <div class="description">
+        <h1>A tool to generate custom firmwares for jailbreaking, verbose boot, downgrading, etc.			</h1>
+        </div>
+        <div class="everything_else">
         <h3>...The possibilities are nearly endless...</h3>
         <hr>
         <h4>**This tool is currently a work-in-progress**</h4>
@@ -25,5 +73,6 @@
             <a href="https://github.com/TKO-Cuber/eth3r/releases">releases page </a>
         for the full version.
         </p>
+     </div>
     </body>
 </html>
