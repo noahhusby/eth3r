@@ -21,7 +21,7 @@ A work-in-progress custom firmware generator.
 
 # Download Links-
 
-Linux: 
+Linux: [Eth3r-Linux](https://github.com/TKO-Cuber/eth3r/releases/download/v0.0.1-beta/Eth3r-Linux.zip)
 
 # Instructions
 	- Download this tool either from releases page or `git clone`ing it
