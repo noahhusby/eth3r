@@ -2,13 +2,13 @@
 # Eth3r
 
 A work-in-progress custom firmware generator.
-  *Also the first tool/program I've made :)*
 
  **REQUIRES A BOOTROM EXPLOIT!**
-   *Or kloader if you know what you're doing*
 
 
-  Currently can Generate a root filesystem, which can be placed in a Sn0wbreeze IPSW manually for a CFW
+  Currently can Generate a root filesystem
+  
+  *Limited to 6.1.3 3GS for now... need more testing on other versions.**
   
   
   &nbsp;
@@ -19,6 +19,9 @@ A work-in-progress custom firmware generator.
   **THIS IS A BETA TOOL! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE TO YOUR DEVICE AS A RESULT OF USING THIS TOOL!*
   * * * * * 
 
+# Download Links-
+
+Linux: 
 
 # Instructions
 	- Download this tool either from releases page or `git clone`ing it
