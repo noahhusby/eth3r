@@ -1,5 +1,5 @@
 
-# Eth3r
+# Eth3r [![Build Status](https://travis-ci.org/noahhusby/eth3r.svg?branch=master)](https://travis-ci.org/noahhusby/eth3r)
 
 A custom firmware generator.
  
