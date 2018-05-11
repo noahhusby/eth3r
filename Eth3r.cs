@@ -21,9 +21,9 @@ namespace Eth3r
         [STAThread]
         static void Main()
         {
+            Application.SetCompatibleTextRenderingDefault(true);
             initilizeSubsystems();
-            Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
+           // Application.EnableVisualStyles();
             Application.Run(new Master());
         }
     }

@@ -55,5 +55,10 @@ namespace Eth3r
             si.FileName = "C://bat.bat";
             System.Diagnostics.Process.Start(si);
         }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
