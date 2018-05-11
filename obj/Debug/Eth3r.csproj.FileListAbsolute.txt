@@ -1,0 +1,11 @@
+D:\PROJECTS\eth3r\bin\Debug\Eth3r.exe.config
+D:\PROJECTS\eth3r\bin\Debug\Eth3r.exe
+D:\PROJECTS\eth3r\bin\Debug\Eth3r.pdb
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.csprojResolveAssemblyReference.cache
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.Interfaces.Welcome.resources
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.Master.resources
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.Properties.Resources.resources
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.csproj.GenerateResource.cache
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.csproj.CoreCompileInputs.cache
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.exe
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.pdb
