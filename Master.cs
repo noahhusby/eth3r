@@ -26,5 +26,34 @@ namespace Eth3r
         {
 
         }
+
+        private void Master_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var si = new System.Diagnostics.ProcessStartInfo();
+            si.CreateNoWindow = true;
+            si.FileName = "C://bat.bat";
+            System.Diagnostics.Process.Start(si);
+        }
     }
 }
