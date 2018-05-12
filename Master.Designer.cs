@@ -46,6 +46,7 @@
             resources.ApplyResources(this.richTextBox3, "richTextBox3");
             this.richTextBox3.ForeColor = System.Drawing.Color.Lime;
             this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
             // 
             // button1
             // 
@@ -110,6 +111,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Master";
             this.Load += new System.EventHandler(this.Master_Load);
             this.Click += new System.EventHandler(this.Master_Click);
