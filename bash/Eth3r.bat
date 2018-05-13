@@ -4,15 +4,32 @@ color 0a
 :: Just 'cuz you aren't a true hacker until everything is in lime green
 
 
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
-echo " "
+cls
+
+if not exist Files/done_ipsw ]]; then
+	cls
+	echo "Welcome to Eth3r!"
+	echo " "
+	echo " "
+	echo "Please create a sn0wbreeze IPSW for your desired iOS version"
+	echo "**and place it inside YOUR C:/ DRIVE**"
+	echo "We will wait for you while you do so."
+	echo " "
+	echo "You will need Windows for Sn0wbreeze... sorry about that ¯\_(ツ)_/¯"
+	echo " "
+	echo "**PLEASE NOTE THAT THE SN0WBREEZE IPSW SHOULD HAVE A ROOT PARTITION SIZE OF 2500MB TO WORK!***"
+	echo " "
+	pause
+	echo " "
+	echo "." > Files/done_ipsw
+fi
 
 
+::Cue the magic, cue the logo, cue the.....  bash?
+
+cls
+echo " "
+echo " "
 echo 		 	         _______ _________          _______  _______
 echo		  		        (  ____ \\__   __/^|\     /^|(  ____ \(  ____ )
 echo				        ^| (    \/   ) (   ^| )   ( ^|^| (    \/^| (    )^|
@@ -21,229 +38,304 @@ echo		    	    	        ^|  __)      ^| ^|   ^|  ___  ^|^|  __)   ^|     __)
 echo				        ^| (         ^| ^|   ^| (   ) ^|^| (      ^| (\ (
 echo				        ^| (____/\   ^| ^|   ^| )   ( ^|^| (____/\^| ) \ \__
 echo			    	    	(_______/   )_(   ^|/     \^|(_______/^|/   \__/
-
-
-
-
-
-
-
-echo " "
-echo " "
-echo                                                   Pre-Alpha
-echo                                                 Version 0.0.1
 echo " "
 echo " "
 echo " "
-echo " "
-echo                                              Eth3r by TKO_Cuber
-echo                                               GUI by NX_Master
+echo '                                  by TKO-Cuber '
 echo " "
 echo " "
 echo " "
-echo " "
-echo " "
+echo '                                 Windows Beta '
+echo '                                 Version 0.0.1 '
 echo " "
 echo " "
 pause
+cls
+echo " "
+echo " "
+echo 		 	         _______ _________          _______  _______
+echo		  		        (  ____ \\__   __/^|\     /^|(  ____ \(  ____ )
+echo				        ^| (    \/   ) (   ^| )   ( ^|^| (    \/^| (    )^|
+echo	  			        ^| (__       ^| ^|   ^| (___) ^|^| (__    ^| (____)^|
+echo		    	    	        ^|  __)      ^| ^|   ^|  ___  ^|^|  __)   ^|     __)
+echo				        ^| (         ^| ^|   ^| (   ) ^|^| (      ^| (\ (
+echo				        ^| (____/\   ^| ^|   ^| )   ( ^|^| (____/\^| ) \ \__
+echo			    	    	(_______/   )_(   ^|/     \^|(_______/^|/   \__/
+echo " "
+echo " "
+echo " "
+echo "                    What would you like to do today? "
+echo " "
+echo "		[1] Generate a custom IPSW "
+echo "		[2] Pwn DFU "
+echo "		[3] Pwn BootROM "
+echo "		[4] Boot after restore"
+echo "		[5] Verbose Boot "
+echo " "
+echo " "
+read mode
 
-::                                So I'm gonna attempt to document this code so curious people can rummage through this... good luck to you.
-
-		:: Main Program Time
-  cd Files
-  CLS
-	echo Please put your IPSW for the desired iOS version in the Files folder
+if "%mode%" == "2" (
+	clear
+	echo "Pwning DFU..."
+	echo " "
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
 	echo " "
 	echo " "
-	pause
+fi
+
+if [[ "$mode" == "3" ]]; then
+	clear
+	echo "Pwning BootROM"
 	echo " "
-    ECHO We need to get some input from you...
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
 	echo " "
-	ECHO What are the firmware keys for your device and target iOS version?
-	ECHO You can find them here https://goo.gl/3vof6m
-	ECHO When you have them, then
-	pause
-    echo " "
-	set /p RootFS_Key="Enter Root Filesystem Key: "
 	echo " "
-	echo Cool. Now just a bit more info and we can get going.
+fi
+
+if [[ "$mode" == "4" ]]; then
+	echo "Booting after restore..."
 	echo " "
-	set /p Model="Enter Device Model (iPhone2,1 or iPad4,2 etc): "
-	set /p Version="Enter desired iOS version (6.1.3, 5.1.1, etc.): "
-	set /p Build="Enter the build number for desired iOS version (10B329, 12C235, etc.): "
-			:: This code asks the user for info, and sets their inputted info as a variable.
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
+	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
+	echo " "
+	echo "Your device should now boot up."
+fi
+if [[ "$mode" == "5" ]]; then
+	if [[ ! -e 'ipwndfu/no_remind' ]]; then
+		echo " "
+		echo This option only works with the new BootROM 3GS.
+		echo Using this on any other device may go wrong.
+		echo " "
+		echo Stop showing this message?
+		echo [1] Yes
+		echo [2] No
+		echo " "
+		read show
+			if [ $show -eq 1 ]
+				then
+					echo "." > 'ipwndfu/no_remind'
+			fi
+	fi
+	if [[ -e 'ipwndfu/no_remind' ]]; then
+		echo " "
+		echo What is your iOS version?
+		echo " "
+		echo [6.1.6]
+		echo [6.1.3]
+		echo [6.1]
+		echo [5.1.1]
+		echo [5.0.1]
+		echo [4.2.1]
+		echo [4.1]
+		echo [3.1.3]
+		echo " "
+		read iOS
+		echo " "
+		echo We will verbose boot your 3GS on iOS $iOS
+		echo " "
+		cd Files/xpwndfu/ipwndfu
+		echo "Pwning DFU"
+		echo " "
+		sudo ./ipwndfu -p
+		echo " "
+		echo "Flashing NOR"
+		echo " "
+		sudo ./ipwndfu -f nor-backups/$iOS.dump
+		echo " "
+		echo "Pwning DFU again"
+		echo " "
+		sudo ./ipwndfu -p
+		echo " "
+		echo "Installing Alloc8 exploit to NOR"
+		echo " "
+		sudo ./ipwndfu -x
+		echo " "
+		cd ../../..
+	fi
+fi
+
+if [[ "$mode" == "2" ]] || [[ "$mode" == "3" ]] || [[ "$mode" == "4" ]] || [[ "$mode" == "5"]]; then
+		echo " "
+		echo "Thank you for using Eth3r by TKO-Cuber"
+		echo "Hope to see you again soon :)"
+		echo " "
+		sleep 6
+		read -rsp $'Press any key to exit....\n' -n1 key
+		exit
+fi
 
 
 
-REM if not exist User_Info (
-	REM mkdir User_Info
-REM )
-	REM cd User_Info
-
-REM if exist pref1.txt (
-			REM if exist pref2.txt (
-				REM if exist pref3.txt (
-					REM for /F "tokens=1" %%A IN ('pref1.txt') do set Model_In_Pref=%%A
-					REM set /p delete="All your preferance files are taken up... delete your first saved configuration containing the info for your %Model_In_Pref%? (yes or no)"
-					REM if "%delete%"=="yes" (
-						REM del pref1.txt
-					REM )
-				REM )
-			REM )
-		REM )
-		REM if not exist pref1.txt (
-			REM if not exist pref2.txt (
-				REM if not exist pref3.txt (
-					REM echo "/%Model%">> pref1.txt
-					REM echo "/%Build%">> pref1.txt
-					REM echo "/%RootFS%">> pref1.txt
-					REM echo "/%RootFS_Key%">> pref1.txt
-					REM )
-				REM )
-			REM )
-			REM if exist pref1.txt (
-				REM if not exist pref2.txt (
-					REM if not exist pref3.txt (
-						REM for /F "tokens=1" %%A IN ('pref1.txt') do set Original_Model=%%A
-						REM if "%Model%" NEQ "%Original_Model%" (
-							REM echo "%Model%">> pref2.txt
-							REM echo %Build%>> pref2.txt
-							REM echo "%RootFS%">> pref2.txt
-							REM echo %RootFS_Key%>> pref2.txt
-						REM )
-					REM )
-				REM )
-			REM )
-			REM if exist pref1.txt (
-				REM if exist pref2.txt (
-					REM if not exist pref3.txt (
-						REM for /F "tokens=1" %%A IN ('pref1.txt') do set Original_Model=%%A
-						REM if "%Model%" NEQ "%Original_Model%" (
-							REM echo "%Model%">> pref3.txt
-							REM echo %Build%>> pref3.txt
-							REM echo "%rootfs%">> pref3.txt
-							REM echo %RootFS_Key%>> pref3.txt
-						REM )
-					REM )
-				REM )
-			REM )
-
-			::         Well, this leaves me with an interesting situation. I would like to echo all
-			::         of the user's device info (firmware keys, model, rootfs name) to one of three
-			::         files dedicated to saving, then later use the 'FOR' command to retrieve the
-			::         info later. The thing is, the iphone model has a comma in it (iPhone2,1 etc.)
-			::         so batch seems to see the comma and end the echoing... which is quite strange.
-			::         I have absolutely no idea how to echo a variable that contains a comma like
-			::         an iPhone model properly. If you see this and you know how to solve this issue,
-			::         do me a big favor and submit a pull request. You'll get credit as well. :)
-
-
-
-
-
-:DA_REAL_STUFF
-CLS
-    cd ..
-    ::%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe -Command "(new-object System.Net.WebClient).DownloadFile('https://github.com/iH8sn0w/sn0wbreeze/releases/2.9.14/1077/sn0wbreeze-v2.9.14.zip', 'Sn0wbreeze.exe')"
-
-
-
-echo Extracting IPSW
-  cd Files
-  7za.exe  x -oIPSW "%Model%_%Version%_%Build%_Restore.ipsw"  >NUL
-		::extracts the IPSW to a folder named IPSW
-
-  :Get
-echo Getting the info we need from the files...
-  cd IPSW
-    echo Getting RootFS name
-	  dir /b /o-s>{temp}
-      set /P rootfs=<{temp}
-	  del {temp}
-
-	  echo The rootfs name is %rootfs%
-
-echo Decrypting Root Filesystem
-  rename "%rootfs%" "rootfs.dmg"
-  cd ..
-  dmg extract "IPSW/rootfs.dmg" "IPSW/decrootfs.dmg" -k %RootFS_Key%  >NUL
-
-echo Giving room to RootFS
-  hfsplus "IPSW/decrootfs.dmg" grow 1920783616
-
-if "%Version%"=="6.1.3" (
-	goto Cydia
-)
-if "%Version%"=="6.1.6" (
-	goto Cydia
-)
-if "%Version%" NEQ "6.1.3" (
-	goto Bypass
-)
-
-	:Cydia
-echo Extracting Cydia
-  hfsplus "IPSW/decrootfs.dmg" untar "Cydia.tar" "/"  >NUL
-
-echo Jailbreaking
-  hfsplus "IPSW/decrootfs.dmg" untar "p0sixspwn.tar" "/" >NUL
-
-	:Bypass
-echo Bypassing iCloud Lock
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/Setup"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/PkgInfo"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/warranty.plist"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/Info.plist"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/CountryAlias.plist"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/_CodeSignature/CodeResources"
-  hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/LanguagesByCountry.plist"
-
-if "%Version%"=="6.1.3" (
-	echo Making stuff better
-  	hfsplus "IPSW/decrootfs.dmg" rm "System/Library/CoreServices/SpringBoard.app/SlideToSetupStrings.strings"
-  	hfsplus "IPSW/decrootfs.dmg" add SlideToSetupStrings.strings "System/Library/CoreServices/SpringBoard.app/SlideToSetupStrings.strings"
-  	hfsplus "IPSW/decrootfs.dmg" rm "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings" SpringBoard.strings
-  	hfsplus "IPSW/decrootfs.dmg" add SpringBoard.strings "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings"
-)
-
-REM echo Making directories
-	REM hfsplus "IPSW/decrootfs.dmg" mkdir "var/root/Media/Cydia"
-	REM hfsplus "IPSW/decrootfs.dmg" mkdir "var/root/Media/Cydia/AutoInstall"
-
-REM echo Adding Siri
-  REM hfsplus "IPSW/decrootfs.dmg" add BypassAuth.deb "var/root/Media/Cydia/AutoInstall"
-  REM hfsplus "IPSW/decrootfs.dmg" add Ac!dSiri.deb "var/root/Media/Cydia/AutoInstall"
-
-REM echo Adding Activator
-	REM hfsplus "IPSW/decrootfs.dmg" add "libactivator_1.9.12_iphoneos-arm.deb" "var/root/Media/Cydia/AutoInstall"
-
-echo Installing SSH
-	hfsplus "IPSW/decrootfs.dmg" untar "ssh_small.tar" "/" >NUL
-
-:next
-echo Rebuilding RootFS
-  copy dmg.exe IPSW >NUL
-  cd IPSW
-  dmg build "decrootfs.dmg" "%rootfs%"  >NUL
-
-
-
-
-
-:end
+sleep 4
+echo " "
+echo "We need to get some input from you..."
+echo " "
+echo "What are the firmware keys for your device and target iOS version?"
+echo "You can find them here: https://goo.gl/3vof6m"
+echo "When you have them, then"
+read -rsp $'Press any key to continue.....\n' -n1 key
+echo " "
+echo "Enter Root Filesystem Key: "
+read RootFS_Key
+echo " "
+echo "Cool. Now just a bit more info and we can get going."
+echo " "
+echo "Enter Device Model (iPhone2,1 or iPad4,2 etc): "
+read Model
+echo "Enter desired iOS version (6.1.3, 5.1.1, etc.): "
+read Version
+echo "Enter the build number for desired iOS version (10B329, 12C235, etc.): "
+read Build
+echo "What is the Root Filesystem .dmg name? (example: 048-2484-005.dmg): "
+read rootfs
 echo " "
 echo " "
+clear
+echo "We will work with "$Model"_"$Version"_"$Build"_Restore.ipsw"
 echo " "
-echo " "
-echo              Your RootFS has been generated
-echo " "
-echo            To use it, replace to RootFS dmg of a
-echo        Sn0wbreeze IPSW with the rootfs we generated.
-echo       The Sn0wbreeze IPSW should have a root partition
-echo                size of 2500 or more MegaBytes.
-echo " "
-echo                    Eth3r by TKO_Cuber
-echo " "
-pause
+sleep 3
+cd Files
 
-  ::Cue the final song... close the curtains...
+	echo "Extracting IPSW"
+	wine 7za.exe  x -oIPSW "$Model"_"$Version"_"$Build"_Restore.ipsw
+
+	echo "Decrypting Root Filesystem"
+		cd IPSW
+	  mv $rootfs "rootfs.dmg"
+	  cd ..
+	  wine dmg extract "IPSW/rootfs.dmg" "IPSW/decrootfs.dmg" -k $RootFS_Key  #> /dev/null 2>&1
+
+	echo "Giving room to RootFS"
+	  wine hfsplus "IPSW/decrootfs.dmg" grow 1920783616
+
+	if [[ "$Version" == "6.1.3" ]]; then
+		echo "Extracting Cydia"
+		  wine hfsplus "IPSW/decrootfs.dmg" untar "Cydia.tar" "/" > /dev/null 2>&1
+		echo "Jailbreaking"
+		  wine hfsplus "IPSW/decrootfs.dmg" untar "p0sixspwn.tar" "/" > /dev/null 2>&1
+		echo "Branding"
+		  wine hfsplus "IPSW/decrootfs.dmg" rm "System/Library/CoreServices/SpringBoard.app/SlideToSetupStrings.strings"
+		  wine hfsplus "IPSW/decrootfs.dmg" add SlideToSetupStrings.strings "System/Library/CoreServices/SpringBoard.app/SlideToSetupStrings.strings"
+		  wine hfsplus "IPSW/decrootfs.dmg" rm "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings"
+		  wine hfsplus "IPSW/decrootfs.dmg" add SpringBoard.strings "System/Library/CoreServices/SpringBoard.app/English.lproj/SpringBoard.strings"
+		echo "Installing SSH"
+			wine hfsplus "IPSW/decrootfs.dmg" untar "ssh_small.tar" "/" > /dev/null 2>&1
+		echo "Bypassing iCloud Lock"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/Setup"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/PkgInfo"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/warranty.plist"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/Info.plist"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/CountryAlias.plist"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/_CodeSignature/CodeResources"
+			  wine hfsplus "IPSW/decrootfs.dmg" rm "Applications/Setup.app/LanguagesByCountry.plist"
+	fi
+
+	if [[ "$Version" == "6.1.6" ]]; then
+		echo "Jailbreaking"
+			wine hfsplus "IPSW/decrootfs.dmg" untar "p0sixspwn.tar" "/" > /dev/null 2>&1
+			echo "Installing SSH"
+				hfsplus "IPSW/decrootfs.dmg" untar "ssh_small.tar" "/" > /dev/null 2>&1
+		echo "Extracting Cydia"
+			wine hfsplus "IPSW/decrootfs.dmg" untar "Cydia.tar" "/" > /dev/null 2>&1
+	fi
+
+	echo "Rebuilding Root Filesystem"
+		cp dmg.exe IPSW
+		cd IPSW
+		wine dmg.exe build "decrootfs.dmg" $rootfs
+		rm dmg.exe
+
+	echo "Repacking RootFS into Sn0wbreeze IPSW"
+	  cd ..
+		echo "Extracting Sn0wbreeze IPSW"
+		wine 7za.exe  x -oSN0 sn0wbreeze*.ipsw
+		echo "Moving files"
+		cd SN0
+		rm $rootfs
+		cd ..
+		cd IPSW
+		mv $rootfs ../SN0
+		cd ..
+		cp 7za.exe SN0
+		cd SN0
+		echo "zipping files"
+		wine 7za.exe u -tzip -mx0 Eth3r_"$Model"_"$Version"_"$Build"_Restore.ipsw -x!7za.exe
+		echo "moving final product"
+		mv Eth3r_"$Model"_"$Version"_"$Build"_Restore.ipsw ../..
+		cd ..
+		echo " "
+		echo " "
+		echo " "
+		echo "          Your IPSW has been generated and named 												 "
+		echo "     'Eth3r_"$Model"_"$Version"_"$Build"_Restore.ipsw'                       "
+		echo "         and is located in the main Eth3r folder.												 "
+		echo " "
+		echo "      To restore to this IPSW, enter pwned DFU mode"
+		echo "     then restore in iTunes. Once that works, come back"
+		echo "     to Eth3r, and use the 'boot after restore' option."
+		echo " "
+		echo " "
+    read -rsp $'Press any key to exit\n' -n1 key
+		exit
+
+		: '
+		if [[ "$mode" == "1" ]]; then
+			echo Restoring to the new Eth3r IPSW
+			echo " "
+			echo " "
+			./idevicerestore/src/idevicerestore -c Eth3r_"$Model"_"$Version"_"$Build"_Restore.ipsw
+			echo " "
+			if [[ "$Model" != "iPhone2,1" ]]; then
+				echo "Your IPSW has been generated and restored to via idevicerestore."
+				echo "This finishes the process you have selected."
+				echo "Thank you for using Eth3r and have a good day/night."
+				echo "         Eth3r by TKO-Cuber"
+				sleep 5
+				echo " "
+				echo " "
+				read -rsp $'Press any key to exit\n' -n1 key
+				exit
+			fi
+			if [[ "$Model" == "iPhone2,1" ]]; then
+					#Anyone order an extra large if statement? Well someone must have.
+				if [[ "$Version" == "6.1.6" ]] || [[ "$Version" == "6.1.3" ]] || [[ "$Version" == "6.1" ]] || [[ "$Version" == "5.1.1" ]] || [[ "$Version" == "5.0.1" ]]; then
+					echo " "
+					echo "Because you are using an $Model on $Version, we will verbose boot your device now."
+					echo " "
+					cd xpwndfu/ipwndfu
+					echo "Pwning DFU"
+					echo " "
+					sudo ./ipwndfu -p
+					echo " "
+					echo "Flashing NOR"
+					echo " "
+					sudo ./ipwndfu -f nor-backups/$iOS.dump
+					echo " "
+					echo "Pwning DFU again"
+					echo " "
+					sudo ./ipwndfu -p
+					echo " "
+					echo "Installing Alloc8 exploit to NOR"
+					echo " "
+					sudo ./ipwndfu -x
+					echo " "
+					echo 						       			"Verbose boot done."
+					echo 			      	"This completes the process you selected."
+					echo    "Thank you very much for using Eth3r! Hope to see you again soon!"
+					echo " "
+					echo "         							Eth3r by TKO-Cuber"
+					cd ../../..
+					echo " "
+					echo " "
+					read -rsp $'Press any key to exit\n' -n1 key
+					exit
+				fi
+			fi
+		fi
+'
+
+#idevicerestore isn't working right now... says cannot connect to DFU mode.
+#maybe if i can fix idevicerestore then I can add support for immediate restoring.
+

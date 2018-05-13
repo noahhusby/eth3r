@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Eth3r
 {
@@ -50,10 +51,13 @@ namespace Eth3r
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var si = new System.Diagnostics.ProcessStartInfo();
-            si.CreateNoWindow = true;
-            si.FileName = "C://bat.bat";
-            System.Diagnostics.Process.Start(si);
+            Process p = new Process();
+            ProcessStartInfo ps = new ProcessStartInfo("\\bat.bat");
+            ps.UseShellExecute = false;
+            ps.RedirectStandardInput = true;
+
+            p.StartInfo = ps;
+            p.Start();
         }
 
         private void richTextBox2_TextChanged(object sender, EventArgs e)
