@@ -73,102 +73,11 @@ echo "		[4] Boot after restore"
 echo "		[5] Verbose Boot "
 echo " "
 echo " "
-read mode
-
-if "%mode%" == "2" (
-	clear
-	echo "Pwning DFU..."
-	echo " "
-	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
-	echo " "
-	echo " "
-fi
-
-if [[ "$mode" == "3" ]]; then
-	clear
-	echo "Pwning BootROM"
-	echo " "
-	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
-	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
-	echo " "
-	echo " "
-fi
-
-if [[ "$mode" == "4" ]]; then
-	echo "Booting after restore..."
-	echo " "
-	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -p
-	sudo ./Files/xpwndfu/ipwndfu/ipwndfu -x
-	echo " "
-	echo "Your device should now boot up."
-fi
-if [[ "$mode" == "5" ]]; then
-	if [[ ! -e 'ipwndfu/no_remind' ]]; then
-		echo " "
-		echo This option only works with the new BootROM 3GS.
-		echo Using this on any other device may go wrong.
-		echo " "
-		echo Stop showing this message?
-		echo [1] Yes
-		echo [2] No
-		echo " "
-		read show
-			if [ $show -eq 1 ]
-				then
-					echo "." > 'ipwndfu/no_remind'
-			fi
-	fi
-	if [[ -e 'ipwndfu/no_remind' ]]; then
-		echo " "
-		echo What is your iOS version?
-		echo " "
-		echo [6.1.6]
-		echo [6.1.3]
-		echo [6.1]
-		echo [5.1.1]
-		echo [5.0.1]
-		echo [4.2.1]
-		echo [4.1]
-		echo [3.1.3]
-		echo " "
-		read iOS
-		echo " "
-		echo We will verbose boot your 3GS on iOS $iOS
-		echo " "
-		cd Files/xpwndfu/ipwndfu
-		echo "Pwning DFU"
-		echo " "
-		sudo ./ipwndfu -p
-		echo " "
-		echo "Flashing NOR"
-		echo " "
-		sudo ./ipwndfu -f nor-backups/$iOS.dump
-		echo " "
-		echo "Pwning DFU again"
-		echo " "
-		sudo ./ipwndfu -p
-		echo " "
-		echo "Installing Alloc8 exploit to NOR"
-		echo " "
-		sudo ./ipwndfu -x
-		echo " "
-		cd ../../..
-	fi
-fi
-
-if [[ "$mode" == "2" ]] || [[ "$mode" == "3" ]] || [[ "$mode" == "4" ]] || [[ "$mode" == "5"]]; then
-		echo " "
-		echo "Thank you for using Eth3r by TKO-Cuber"
-		echo "Hope to see you again soon :)"
-		echo " "
-		sleep 6
-		read -rsp $'Press any key to exit....\n' -n1 key
-		exit
-fi
+set /p mode="/>/>/> "
 
 
 
-sleep 4
+timeout /t 3 >nul
 echo " "
 echo "We need to get some input from you..."
 echo " "

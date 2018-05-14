@@ -20,3 +20,4 @@ C:\eth3r\obj\Debug\Eth3r.csproj.GenerateResource.Cache
 C:\eth3r\obj\Debug\Eth3r.csproj.CoreCompileInputs.cache
 C:\eth3r\obj\Debug\Eth3r.exe
 C:\eth3r\obj\Debug\Eth3r.pdb
+C:\eth3r\obj\Debug\Eth3r.GenerateFirmware.resources
