@@ -15,7 +15,6 @@ namespace Eth3r
         public GenerateFirmware()
         {
             InitializeComponent();
-			dank
         }
     }
 }
