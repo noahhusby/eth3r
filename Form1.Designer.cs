@@ -35,8 +35,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -121,18 +121,6 @@
             this.panel1.Size = new System.Drawing.Size(258, 142);
             this.panel1.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Lime;
-            this.label4.Location = new System.Drawing.Point(79, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 26);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Options";
-            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -147,6 +135,18 @@
             this.checkBox2.Text = "Bypass Setup.app";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Lime;
+            this.label4.Location = new System.Drawing.Point(79, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 26);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Options";
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -160,6 +160,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Generate Custom Firmware";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // GenerateFirmware
             // 
