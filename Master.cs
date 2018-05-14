@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -16,53 +9,64 @@ namespace Eth3r
         public Master()
         {
             InitializeComponent();
-            
-        }
-
-        private void Master_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Master_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseClick(object sender, MouseEventArgs e)
-        {
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Process p = new Process();
-            ProcessStartInfo ps = new ProcessStartInfo("\\bat.bat");
-            ps.UseShellExecute = false;
-            ps.RedirectStandardInput = true;
-
-            p.StartInfo = ps;
-            p.Start();
+            this.Hide();
+            GenerateFirmware gen = new GenerateFirmware();
+            gen.Show();
+            Master mstr = new Master();
+            //Process p = new Process();
+            //ProcessStartInfo ps = new ProcessStartInfo("\\bat.bat");
+            //ps.UseShellExecute = false;
+            //ps.RedirectStandardInput = true;
+            //p.StartInfo = ps;
+            //p.Start();
         }
 
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Eth3r is a concept I thought of a while back," +
+                "when I first got interested in custom firmwares. Eth3r was originally" +
+                "designed to be similar to Sn0wbreeze and PwnageTool, just supporting more" +
+                "devices (theoretically) and with more options. Originally written in batch," +
+                "the only 'language' I knew at the time, Eth3r was a fun sideproject. After" +
+                "months of trial and error, I finally got a custom RootFS to work correctly when" +
+                "placed in a Sn0wbreeeze IPSW. After evening out a few things, I enlisted the" +
+                "help of ond of my friends NX_Master to help me get started in rewriting Eth3r in" +
+                "C#, and here we are now. I plan to add support for custom bootlogos, verbose boot," +
+                "full IPSW generation, and more in the future, but as I am a new developer these things" +
+                "won't have an ETA. These things require time on my part, learning Asembly for" +
+                "iBEC, iBSS, iBoot, ASR, etc. patches and verbose boot and the like. Eth3r is a lot of" +
+                "fun to make for me, and I hope things stay this way so I continue to make this tool better." +
+                "5/13/18 TKO-Cuber", "About Eth3r", MessageBoxButtons.OK);
+        }
+
+        public void button3_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            //this.Hide();
+            //AboutBox1 abt = new AboutBox1();
+            //abt.Show();
+        }
     }
 }
+
+//pictureBox1.Hide();
+         //   label2.Hide();
+         //   label1.Hide();
+         //   label3.Hide();
+          //  button1.Hide();
+           // button2.Hide();
+           // button3.Hide();
+           // button4.Hide();
+            
+            //this.Close();
+            //string input;
+            //input = textBox1.Text;
+            //MessageBox.Show(input);
