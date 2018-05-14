@@ -1,29 +1,13 @@
 
-# Eth3r
+# Eth3r [![Build Status](https://travis-ci.org/noahhusby/eth3r.svg?branch=master)](https://travis-ci.org/noahhusby/eth3r)
 
-A work-in-progress custom firmware generator.
-
- **REQUIRES A BOOTROM EXPLOIT!**
-
-
-  Currently can Generate a root filesystem
-  
-  *Limited to 6.1.3 3GS for now... need more testing on other versions.**
-  
-  
-  &nbsp;
-  &nbsp;
-  
-  
-  * * * * * 
-  **THIS IS A BETA TOOL! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE TO YOUR DEVICE AS A RESULT OF USING THIS TOOL!*
-  * * * * * 
+A custom firmware generator.
+ 
+  **This is a beta program! We do not hold any responsibility for damage**
 
 # Download Links-
 
 Linux: [Eth3r-Linux](https://github.com/TKO-Cuber/eth3r/releases/download/v0.0.1-beta/Eth3r-Linux.zip)
-
-***
 
 # Instructions
 	- Download this tool either from releases page or `git clone`ing it
