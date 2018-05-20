@@ -111,7 +111,7 @@ cd Files
 	wine 7za.exe  x -oIPSW "$Model"_"$Version"_"$Build"_Restore.ipsw
 
 	echo "Decrypting Root Filesystem"
-		cd IPSW
+	  cd IPSW
 	  mv $rootfs "rootfs.dmg"
 	  cd ..
 	  wine dmg extract "IPSW/rootfs.dmg" "IPSW/decrootfs.dmg" -k $RootFS_Key  #> /dev/null 2>&1

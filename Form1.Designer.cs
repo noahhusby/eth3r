@@ -43,6 +43,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(858, 150);
+            this.label3.Location = new System.Drawing.Point(178, 257);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 32);
             this.label3.TabIndex = 3;
@@ -98,7 +100,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "6.1.3"});
-            this.comboBox2.Location = new System.Drawing.Point(802, 202);
+            this.comboBox2.Location = new System.Drawing.Point(129, 320);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(216, 24);
             this.comboBox2.TabIndex = 4;
@@ -123,7 +125,7 @@
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Location = new System.Drawing.Point(457, 302);
+            this.panel1.Location = new System.Drawing.Point(458, 302);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(258, 142);
             this.panel1.TabIndex = 6;
@@ -174,7 +176,7 @@
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label5.ForeColor = System.Drawing.Color.Lime;
-            this.label5.Location = new System.Drawing.Point(475, 122);
+            this.label5.Location = new System.Drawing.Point(475, 150);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(3);
@@ -189,7 +191,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(475, 202);
+            this.button1.Location = new System.Drawing.Point(475, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(223, 36);
             this.button1.TabIndex = 9;
@@ -201,10 +203,10 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.MenuText;
             this.richTextBox1.ForeColor = System.Drawing.Color.Lime;
-            this.richTextBox1.Location = new System.Drawing.Point(49, 302);
+            this.richTextBox1.Location = new System.Drawing.Point(817, 204);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(287, 240);
+            this.richTextBox1.Size = new System.Drawing.Size(287, 300);
             this.richTextBox1.TabIndex = 10;
             this.richTextBox1.Text = "Waiting for input...";
             // 
@@ -213,11 +215,39 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label6.ForeColor = System.Drawing.Color.Lime;
-            this.label6.Location = new System.Drawing.Point(96, 257);
+            this.label6.Location = new System.Drawing.Point(858, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 32);
             this.label6.TabIndex = 11;
             this.label6.Text = "Console Window";
+            // 
+            // label7
+            // 
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label7.ForeColor = System.Drawing.Color.Lime;
+            this.label7.Location = new System.Drawing.Point(122, 408);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(3);
+            this.label7.Size = new System.Drawing.Size(223, 36);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Select Stock IPSW";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Lime;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(122, 468);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(223, 36);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Find IPSW";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // GenerateFirmware
             // 
@@ -225,6 +255,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowText;
             this.ClientSize = new System.Drawing.Size(1130, 623);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
@@ -261,5 +293,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button3;
     }
 }

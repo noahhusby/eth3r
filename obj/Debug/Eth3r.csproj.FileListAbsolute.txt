@@ -13,7 +13,6 @@ C:\eth3r\bin\Debug\Eth3r.exe.config
 C:\eth3r\bin\Debug\Eth3r.exe
 C:\eth3r\bin\Debug\Eth3r.pdb
 C:\eth3r\obj\Debug\Eth3r.csprojResolveAssemblyReference.cache
-C:\eth3r\obj\Debug\Eth3r.Interfaces.Welcome.resources
 C:\eth3r\obj\Debug\Eth3r.Master.resources
 C:\eth3r\obj\Debug\Eth3r.Properties.Resources.resources
 C:\eth3r\obj\Debug\Eth3r.csproj.GenerateResource.Cache

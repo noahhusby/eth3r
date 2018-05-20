@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Security.Principal;
 
 namespace Eth3r
 {
@@ -45,7 +46,7 @@ namespace Eth3r
 
         public void button3_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("1. Create a Sn0wbreeze IPSW for the desired iOS version and device **WHICH HAS A ROOT PARTITION SIZE OF 2500MB**" + Environment.NewLine + Environment.NewLine + "2. Open Eth3r and create a custom firmware." + Environment.NewLine + Environment.NewLine + "3. Use Sn0wbreeze to enter pwned DFU mode." + Environment.NewLine + Environment.NewLine + "4. Restore to the custom Eth3r IPSW located on your desktop using iTunes" + Environment.NewLine + Environment.NewLine + "5. After the restore goes through, boot into Linux and use ipwndfu by Axi0mX to boot up" + Environment.NewLine + Environment.NewLine + "6. Enjoy your custom firmware :)", "Instructions for Eth3r", MessageBoxButtons.OK);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -53,6 +54,11 @@ namespace Eth3r
             //this.Hide();
             //AboutBox1 abt = new AboutBox1();
             //abt.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature will be coming to Eth3r shortly");
         }
     }
 }
