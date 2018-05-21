@@ -11,8 +11,6 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Text;
 
 
 namespace Eth3r
@@ -26,23 +24,19 @@ namespace Eth3r
         public string iosversion;
         public string buildid;
         private string rootfs;
-        private string updateRamdisk;
-        private string ramdisk;
         public string rootfskey;
         private bool stockFound;
         public string stockPath;
         public bool IsAdministrator;
-        private static int lineCount = 0;
         public static StringBuilder output = new StringBuilder();
         public static Process process;
         public string sn0Path;
+        public string updateRamdisk;
 
         public GenerateFirmware()
         {
             InitializeComponent();
         }
-
-
 
 
         public static void ExecuteCommand(string command)
@@ -124,7 +118,12 @@ namespace Eth3r
                 MessageBox.Show("You did not select a Sn0wbreeze IPSW!");
                 goodToGo = false;
             }
-            if (dialogSelection == DialogResult.Cancel)
+            if (stockFound == false)
+            {
+                MessageBox.Show("You did not select a Stock IPSW!");
+                goodToGo = false;
+            }
+                if (dialogSelection == DialogResult.Cancel)
             {
                 MessageBox.Show("You pressed the select IPSW button, but did not select an IPSW!");
                 goodToGo = false;
