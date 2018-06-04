@@ -10,7 +10,7 @@ A custom firmware generator.
 
 # Download Links-
 
-Windows: [**Eth3r**](https://github.com/TKO-Cuber/eth3r/releases/download/v0.0.2-beta_win/Eth3r-setup.exe)
+Windows: [**Eth3r**](https://github.com/TKO-Cuber/eth3r/releases/download/v0.0.5-beta_win/Eth3r_Setup.exe)
 
 Linux: [Eth3r-Linux](https://github.com/TKO-Cuber/eth3r/releases/download/v0.0.1-beta/Eth3r-Linux.zip)
 
