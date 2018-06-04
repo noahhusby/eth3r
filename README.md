@@ -5,6 +5,8 @@
 A custom firmware generator.
  
   **This is a beta program! We do not hold any responsibility for damage!!!**
+  
+*see wiki for details*
 
 # Download Links-
 
