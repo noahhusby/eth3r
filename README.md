@@ -1,3 +1,5 @@
+![Eth3r Logo](https://tko-cuber.github.io/jb/eth3r.png)
+
 # Eth3r [![Build Status](https://travis-ci.org/TKO-Cuber/eth3r.svg?branch=master)](https://travis-ci.org/TKO-Cuber/eth3r)
 
 A custom firmware generator.
