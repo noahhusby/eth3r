@@ -1,0 +1,93 @@
+#!/bin/bash
+
+
+echo "Installng dependencies..."
+echo ' '
+echo " "
+sleep 7
+echo "Downloading idevicerestore dependencies..."
+echo " "
+echo " "
+echo "please install the following using your package manager:"
+echo "libtool m4 git wine wget automake autoconf libxml2-dev python2.7-dev libusb-dev libusb-1.0-0-dev libssl-dev libreadline-dev libzip-dev libbz2-dev libcurl4-openssl-dev texinfo cmake"
+sleep 1
+echo " "
+echo "In the case of Ubuntu users, do this:"
+echo " "
+echo "sudo apt-get install -y libtool git wget wine m4 automake autoconf libxml2-dev python2.7-dev libusb-dev libusb-1.0-0-dev libssl-dev libreadline-dev libzip-dev libbz2-dev libcurl4-openssl-dev texinfo cmake"
+echo " "
+read -rsp $'Press any key once you have done this.....\n' -n1 key
+clear
+echo "Downloading and comiling idevicerestore..."
+echo " "
+cd Files
+echo "Downloading ipwndfu..."
+git clone --recursive https://github.com/TKO-Cuber/xpwndfu.git > /dev/null
+echo " "
+
+# ALL CREDIT TO u/TheonlyGermanGuy on reddit for the libimobile device compiling!
+# https://www.reddit.com/r/jailbreak/comments/58gxji/tutorial_compiling_libimobiledevice_irecovery/
+
+
+git clone https://github.com/libimobiledevice/libplist
+
+cd libplist
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+git clone https://github.com/libimobiledevice/libusbmuxd
+
+cd libusbmuxd
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+git clone https://github.com/libimobiledevice/libimobiledevice
+
+cd libimobiledevice
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+git clone https://github.com/libimobiledevice/usbmuxd
+
+cd usbmuxd
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+git clone https://github.com/libimobiledevice/libirecovery
+
+cd libirecovery
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+git clone https://github.com/libimobiledevice/idevicerestore
+
+cd idevicerestore
+
+./autogen.sh
+make
+sudo make install
+cd ..
+
+
+
+  echo "." > dep_inst
+
+echo " "
+echo " "
+echo "If any errors occured here, it's probably ok."
+echo "Worst case scenario you can manually install the dependencies."
