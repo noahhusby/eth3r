@@ -164,6 +164,7 @@ namespace Eth3r
 
             if (checkBox3.Checked)
             {
+                
                 if (string.IsNullOrWhiteSpace(richTextBox2.Text))
                 {
                     MessageBox.Show("You checked the 'custom strings' box, but you didn't fill out the box!");
