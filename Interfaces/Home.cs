@@ -42,7 +42,8 @@ namespace Eth3r.Interfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Eth3r.graphics.setWindow(Eth3r.cfm);
+            global::Eth3r.Eth3r.graphics.setWindow(global::Eth3r.Eth3r.cfm);
+
         }
     }
 }
