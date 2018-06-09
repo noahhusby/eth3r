@@ -2,7 +2,7 @@
 
 # Eth3r [![Build Status](https://travis-ci.org/TKO-Cuber/eth3r.svg?branch=master)](https://travis-ci.org/TKO-Cuber/eth3r)
 
-A custom firmware generator.
+The Open Source Jailbreak Tool
  
   **This is a beta program! We do not hold any responsibility for damage!!!**
   
