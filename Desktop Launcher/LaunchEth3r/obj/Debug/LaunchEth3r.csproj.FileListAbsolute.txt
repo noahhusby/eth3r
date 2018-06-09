@@ -1,7 +1,0 @@
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\bin\Debug\LaunchEth3r.exe.config
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\bin\Debug\LaunchEth3r.exe
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\bin\Debug\LaunchEth3r.pdb
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\obj\Debug\LaunchEth3r.csproj.CoreCompileInputs.cache
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\obj\Debug\LaunchEth3r.exe
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\obj\Debug\LaunchEth3r.pdb
-C:\Users\Admin\source\repos\LaunchEth3r\LaunchEth3r\obj\Debug\LaunchEth3r.csprojAssemblyReference.cache
