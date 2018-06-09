@@ -3,6 +3,9 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Security.Principal;
 using System.IO;
+using System.Drawing;
+using System.Linq;
+using System.Drawing.Imaging;
 
 namespace Eth3r
 {
@@ -40,6 +43,20 @@ namespace Eth3r
         private void Master_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

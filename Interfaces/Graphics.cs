@@ -13,8 +13,8 @@ namespace Eth3r.Interfaces
         {
             control.Dock = DockStyle.Fill;
             control.Padding = Padding.Empty;
-            Eth3r.masterWindow.Controls.Clear();
-            Eth3r.masterWindow.Controls.Add(control);
+            Eth3r.masterWindow.View.Controls.Clear();
+            Eth3r.masterWindow.View.Controls.Add(control);
         }
     }
 }
