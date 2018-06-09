@@ -157,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
     <None Include="Fonts\Roboto-Black.ttf">
@@ -211,6 +212,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="coollogo_com_2095614_aE1_12.ico" />
+    <None Include="Resources\ic_vpn_key_white_48dp.png" />
+    <None Include="Resources\ic_usb_white_48dp.png" />
+    <None Include="Resources\ic_more_vert_white_48dp.png" />
+    <None Include="Resources\ic_menu_white_48dp.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

@@ -25,7 +25,7 @@ namespace Eth3r
             Application.SetCompatibleTextRenderingDefault(true);
             initilizeSubsystems();
             // Application.EnableVisualStyles();
-            graphics.setWindow(home);
+            //graphics.setWindow(home);
             Application.Run(masterWindow);
         }
     }
