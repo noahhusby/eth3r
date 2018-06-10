@@ -10,6 +10,7 @@ namespace Eth3r
         public static Home home;
         public static Graphics graphics;
         public static CFM cfm;
+        public static Splashcs splash;
 
         private static void initilizeSubsystems()
         {
@@ -17,6 +18,7 @@ namespace Eth3r
             home = new Home();
             graphics = new Graphics();
             cfm = new CFM();
+            splash = new Splashcs();
         }
 
         [STAThread]
@@ -24,8 +26,9 @@ namespace Eth3r
         {
             Application.SetCompatibleTextRenderingDefault(true);
             initilizeSubsystems();
-            // Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             //graphics.setWindow(home);
+            Application.Run(splash);
             Application.Run(masterWindow);
         }
     }

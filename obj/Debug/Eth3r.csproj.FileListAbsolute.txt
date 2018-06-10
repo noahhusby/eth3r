@@ -82,3 +82,4 @@ D:\PROJECTS\eth3r\obj\Debug\Eth3r.Form2.resources
 D:\PROJECTS\eth3r\obj\Debug\Eth3r.Form3.resources
 D:\PROJECTS\eth3r\obj\Debug\Eth3r.Interfaces.Home.resources
 D:\PROJECTS\eth3r\obj\Debug\Eth3r.csproj.CopyComplete
+D:\PROJECTS\eth3r\obj\Debug\Eth3r.Interfaces.Splashcs.resources
