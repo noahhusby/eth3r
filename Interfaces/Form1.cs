@@ -368,20 +368,21 @@ namespace Eth3r
         }
     }
 
+    /**
 
-
-/**
 string instDir = "\"c:/Program Files (x86)/Eth3r\"";
 static void LineChanger(string newText, string fileName, int line_to_edit)
 {
-    string[] arrLine = File.ReadAllLines(fileName);
-    arrLine[line_to_edit - 1] = newText;
-    File.WriteAllLines(fileName, arrLine);
+        string[] arrLine = File.ReadAllLines(fileName);
+        arrLine[line_to_edit - 1] = newText;
+        File.WriteAllLines(fileName, arrLine);
+
 }
 
 private void button3_Click(object sender, EventArgs e)
 {
-    string customSlideToUnlockText = textBox1.Text;
-    MessageBox.Show("\"AWAY_LOCK_LABEL\" = \"" + customSlideToUnlockText + "\";");
-            //LineChanger("\"AWAY_LOCK_LABEL\" = \"" + customSlideToUnlockText + "\";" , instDir + "/SpringBoard.strings" , 1);
-    **/ }
+        string customSlideToUnlockText = textBox1.Text;
+        MessageBox.Show("\"AWAY_LOCK_LABEL\" = \"" + customSlideToUnlockText + "\";");
+                //LineChanger("\"AWAY_LOCK_LABEL\" = \"" + customSlideToUnlockText + "\";" , instDir + "/SpringBoard.strings" , 1);
+        **/
+}

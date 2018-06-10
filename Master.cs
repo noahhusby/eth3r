@@ -58,5 +58,15 @@ namespace Eth3r
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void View_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
