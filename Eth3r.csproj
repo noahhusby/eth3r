@@ -50,7 +50,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>coollogo_com_2095614_aE1_12.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -121,6 +122,12 @@
     <Compile Include="Interfaces\MT.Designer.cs">
       <DependentUpon>MT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Splashcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Splashcs.Designer.cs">
+      <DependentUpon>Splashcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Splashcs.resx">
+      <DependentUpon>Splashcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master.resx">
       <DependentUpon>Master.cs</DependentUpon>
@@ -211,7 +221,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coollogo_com_2095614_aE1_12.ico" />
+    <None Include="Splash.png" />
     <None Include="Resources\ic_vpn_key_white_48dp.png" />
     <None Include="Resources\ic_usb_white_48dp.png" />
     <None Include="Resources\ic_more_vert_white_48dp.png" />
@@ -231,6 +241,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usb_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_more_vert_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usb_white_18dp1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
