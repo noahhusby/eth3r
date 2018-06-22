@@ -57,6 +57,7 @@
             // 
             // View
             // 
+            this.View.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.View, "View");
             this.View.Name = "View";
             this.View.Paint += new System.Windows.Forms.PaintEventHandler(this.View_Paint);
@@ -92,6 +93,7 @@
             this.pictureBox3.Image = global::Eth3r.Properties.Resources.ic_usb_white_18dp1;
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
