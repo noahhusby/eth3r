@@ -51,12 +51,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(23, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 279);
+            this.panel1.Size = new System.Drawing.Size(634, 185);
             this.panel1.TabIndex = 1;
             // 
             // label2
