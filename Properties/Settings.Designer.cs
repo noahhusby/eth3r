@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Drawing;
+
 namespace Eth3r.Properties
 {
 
@@ -26,5 +28,7 @@ namespace Eth3r.Properties
                 return defaultInstance;
             }
         }
+
+        public Size Size { get; internal set; }
     }
 }

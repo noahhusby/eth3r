@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Device.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Device.Designer.cs">
+      <DependentUpon>Device.cs</DependentUpon>
+    </Compile>
     <Compile Include="Eth3r.cs" />
     <Compile Include="Interfaces\CFM.cs">
       <SubType>UserControl</SubType>
@@ -137,6 +143,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomStrings.resx">
       <DependentUpon>CustomStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Device.resx">
+      <DependentUpon>Device.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\CFM.resx">
       <DependentUpon>CFM.cs</DependentUpon>
@@ -221,6 +230,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ideviceinfo.bat" />
     <None Include="Splash.png" />
     <None Include="Resources\ic_vpn_key_white_48dp.png" />
     <None Include="Resources\ic_usb_white_48dp.png" />
@@ -250,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_usb_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ideviceinfo.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

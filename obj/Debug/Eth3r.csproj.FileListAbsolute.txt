@@ -114,3 +114,5 @@ C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.csproj.CopyComplete
 C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.exe
 C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.pdb
+C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.Interfaces.Device.resources
+C:\Users\Admin\Desktop\eth3r\obj\Debug\Eth3r.csprojAssemblyReference.cache
