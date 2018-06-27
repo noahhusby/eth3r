@@ -72,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Device.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Device.Designer.cs">
+      <DependentUpon>Device.cs</DependentUpon>
+    </Compile>
     <Compile Include="Eth3r.cs" />
     <Compile Include="Interfaces\CFM.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +134,12 @@
     <Compile Include="Interfaces\Splashcs.Designer.cs">
       <DependentUpon>Splashcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomStrings.resx">
       <DependentUpon>CustomStrings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Device.resx">
+      <DependentUpon>Device.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\CFM.resx">
       <DependentUpon>CFM.cs</DependentUpon>
@@ -152,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Splashcs.resx">
       <DependentUpon>Splashcs.cs</DependentUpon>
@@ -221,6 +239,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ideviceinfo.bat" />
     <None Include="Splash.png" />
     <None Include="Resources\ic_vpn_key_white_48dp.png" />
     <None Include="Resources\ic_usb_white_48dp.png" />
@@ -250,6 +269,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ic_usb_white_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ColorLogoNoIcon.png" />
+    <None Include="Resources\site.png" />
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\ColorLogoNoIcon.png" />
+    <None Include="Resources\ColorLogoNoIcon_50.png" />
+    <None Include="Resources\button.PNG" />
+    <None Include="Resources\button1.PNG" />
+    <None Include="Resources\button.v4.PNG" />
+    <None Include="Resources\button.v4 %281%29.PNG" />
+    <None Include="Resources\aquabutton.png" />
+    <None Include="Resources\aquabutton_1_12.png" />
+    <None Include="Resources\aquabutton_4_9.png" />
+    <None Include="Resources\aquabutton_5_7.png" />
+    <None Include="Resources\help.png" />
+    <Content Include="Resources\ideviceinfo.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Eth3r.Interfaces
 {
-    class Graphics
+    public class Graphics
     {
         public void setWindow(Control control)
         {
